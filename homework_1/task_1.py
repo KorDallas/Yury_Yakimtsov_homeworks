@@ -2,5 +2,5 @@
 
 side = int(input("Введите длинну ребра куба: "))
 print('Объём куба равен: ', side * side * side )
-side **= side
+side *= side
 print('Площадь боковой поверхности равна: ', side)
