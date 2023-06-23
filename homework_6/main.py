@@ -18,6 +18,7 @@ while step > 0:
         colors = "красный"
     elif colors == 2:
         colors = 'черный'
+    elif num_check < 1 or num_check > 10:
     else:
         print('Такого игрового сектра нет')
         continue
