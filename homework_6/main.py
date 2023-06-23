@@ -5,28 +5,25 @@
 
 import random
 step = 5
-
+colors_list = ['красный', 'черный']
 while step > 0:
     step -= 1
     colors = random.randint(1, 2)
     numbers = random.randint(1, 10)
-  # print(f'{numbers} {colors}')  # Проверка
+#   print(f'{numbers} {colors}')  # Проверка
     user_num = input("Сделай ставку, ставки принимаются на красный или черный сектор от 1 до 10: ")
     user_num = user_num.split(" ")
     num_check = int(user_num[0])
     if colors == 1:
-        colors = "красный"
+        colors = colors_list[0]
     elif colors == 2:
-        colors = 'черный'
+        colors = colors_list[1]
+    if user_num[1] not in colors_list:
+        print('Такого игрового сектора нет')
     elif num_check < 1 or num_check > 10:
-    else:
-        print('Такого игрового сектра нет')
-        continue
-    if numbers == num_check and colors == user_num[1]:
-        print('Позднарвляем ваша ставка выиграла!')
-    else:
+        print('Такого игрового сектора нет')
+    elif numbers != num_check or colors != user_num[1]:
         print('Ставка не сыграла')
         print(f'Выиграл номер {numbers} {colors}!')
-
-
-
+    else:
+        print('Поздравляем ваша ставка выиграла!')
